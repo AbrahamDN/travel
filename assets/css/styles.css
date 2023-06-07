@@ -30,6 +30,13 @@
   --font-medium: 500;
   --font-semi-bold: 600;
 
+  /*========== Gradient ==========*/
+  --shadow-gradient: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 50%,
+    hsl(0, 0%, 0%) 125%
+  );
+
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -284,11 +291,7 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(
-    180deg,
-    hsla(0, 0%, 0%, 0) 50%,
-    hsl(0, 0%, 0%) 125%
-  );
+  background: var(--shadow-gradient);
 }
 
 .home__card-title {
@@ -328,6 +331,41 @@ img {
 }
 
 /*=============== ABOUT ===============*/
+.about__container {
+  row-gap: 3rem;
+}
+
+.about__data {
+  text-align: center;
+}
+
+.about__description {
+  margin-bottom: 2rem;
+}
+
+.about__image {
+  position: relative;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.about__img {
+  width: 300px;
+  transition: transform 0.4s;
+}
+
+.about__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shadow-gradient);
+}
+
+.about__image:hover .about__img {
+  transform: scale(1.2);
+}
 
 /*=============== POPULAR ===============*/
 
